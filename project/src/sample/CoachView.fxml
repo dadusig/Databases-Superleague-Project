@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CoachController">
+   <top>
+      <HBox style="-fx-background-color: #7dedaa;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="ID Προπονητή:">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" top="15.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="coachId" onAction="#coachBtnCliked">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Label text="Τρέχουσα Ημερομηνία:">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" top="15.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="currentDate" onAction="#coachBtnCliked" promptText="2016-12-31">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#coachBtnCliked" text="ΕΦΑΡΜΟΓΗ">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="675.0" prefWidth="950.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                  <Label fx:id="coachName" text="Όνομα Προπονητή:">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="coaches" text="Προπονεί:">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="50.0" right="10.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <Label text="Προσεχείς Αγώνες">
+               <VBox.margin>
+                  <Insets left="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TableView fx:id="futureGames" prefHeight="126.0" prefWidth="950.0" />
+            <HBox>
+               <children>
+                  <Label text="Διαθέσιμοι Παίκτες">
+                     <HBox.margin>
+                        <Insets left="10.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="createBtn" mnemonicParsing="false" onAction="#createPlayerClicked" text="Προσθήκη Παίκτη" visible="false">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="playerTable" prefHeight="129.0" prefWidth="950.0" />
+            <HBox minHeight="190.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="Νίκες">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TableView fx:id="pastWins" prefWidth="471.0" />
+                     </children>
+                  </VBox>
+                  <Region prefWidth="8.0" />
+                  <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label text="'Ηττες">
+                           <VBox.margin>
+                              <Insets bottom="5.0" right="5.0" top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TableView fx:id="pastDefeats" prefHeight="300.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Label text="Ισοπαλίες">
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <HBox prefHeight="120.0" prefWidth="79.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <TableView fx:id="pastTies" minHeight="120.0" prefHeight="120.0" prefWidth="429.0" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin></TableView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox prefHeight="120.0" prefWidth="225.0">
+                           <children>
+                              <Label text="Προηγούμενες Ομάδες">
+                                 <VBox.margin>
+                                    <Insets top="-18.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TableView fx:id="pastTeams" prefHeight="122.0" prefWidth="259.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Τα στατιστικά μου">
+                                 <VBox.margin>
+                                    <Insets left="8.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Συνολικά στατιστικά στοιχεία προπονητή" textAlignment="CENTER" textFill="#bfbfbf">
+                                 <VBox.margin>
+                                    <Insets bottom="-8.0" left="8.0" right="8.0" top="-3.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="wins" text="Νίκες:">
+                                 <VBox.margin>
+                                    <Insets left="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="defeats" layoutX="18.0" layoutY="10.0" text="Ήττες:">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="ties" layoutX="10.0" layoutY="27.0" text="Ισοπαλίες:">
+                                 <VBox.margin>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
