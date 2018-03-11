@@ -1,6 +1,6 @@
-# Superleague - Databases' lab project
+# Superleague - Databases' lab project ![semester](https://img.shields.io/badge/Winter%20Semester-2016--2017-green.svg)
 
-This project created as a part of the Databases course lab, during the summer of 2017. 
+This project created as a part of the Databases course lab.
 
 With my teammate Stavroula Dritsa we had to create a simulation of the greek football league using Java and provide a GUI (in our case, we chose JavaFX). 
 For the purpose of the assignment we created a small database filled with some mock data in order to demonstrate the features of our program.
